@@ -14,13 +14,6 @@ public class ContaCorrente extends Conta {
     private double chequeEspecial;
     private double anuidade;
     
-     public void saque(){
-    }
-    public void saldo(){
-    }
-    public void extrato(){
-    }
-    public void deposito(){
-    }
+     
     
 }

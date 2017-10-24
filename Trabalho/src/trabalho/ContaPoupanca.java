@@ -5,20 +5,27 @@
  */
 package trabalho;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import javax.swing.JOptionPane;
+
 /**
  *
- * @author 71501118
+ * @author 71501118 - Eduardo Gonçalves
+ * @author 71501215 - Gustavo Costa
+ * @author 71501240 - Lucas de Lelis
  */
-public class ContaPoupanca extends Conta{
-    
+public class ContaPoupanca extends Conta {
+
     private double rendimento;
-    
-     public void saque(){
-    }
-    public void saldo(){
-    }
-    public void extrato(){
-    }
-    public void deposito(){
+
+    public void calcularRendimento(double taxa) {
+        if (taxa > 0) {
+            this.rendimento = rendimento * taxa;
+        } else {
+            JOptionPane.showMessageDialog(null, "A taxa deve ser maior que zero!");
+        }
+        
     }
 }
