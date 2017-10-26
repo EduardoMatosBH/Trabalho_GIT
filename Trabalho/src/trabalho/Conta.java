@@ -57,7 +57,11 @@ public class Conta {
             JOptionPane.showMessageDialog(null, "Saldo insuficiente");
         }
     }
-    public void saldo(){
+    public double saldo(){
+        
+        System.out.println("Saldo: " +saldo);
+        
+        return saldo;
     }
     public void extrato(){
     }
