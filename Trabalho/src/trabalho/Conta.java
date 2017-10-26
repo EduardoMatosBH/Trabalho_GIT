@@ -13,6 +13,7 @@ import javax.swing.JOptionPane;
  * @author 71501118
  */
 public class Conta {
+
     private String titular;
     private int ag;
     private int conta;
@@ -62,10 +63,23 @@ public class Conta {
             JOptionPane.showMessageDialog(null, "Saldo insuficiente");
         }
     }
-    public void saldo(){
+    public double saldo(){
+        
+        System.out.println("Saldo: " +saldo);
+        
+        return saldo;
+ 
     }
    
-    public void deposito(){
+
+    public void deposito(double valor) {
+        if (valor <= 0) {
+            JOptionPane.showMessageDialog(null, "Valor deve ser maior que zero! Deposito não efetuado!");
+        } else {
+            setSaldo(saldo + valor);
+        }
+        JOptionPane.showMessageDialog(null, "Deposito realizado com sucesso!");
+
     }
 
     public ArrayList<String> getExtrato() {
