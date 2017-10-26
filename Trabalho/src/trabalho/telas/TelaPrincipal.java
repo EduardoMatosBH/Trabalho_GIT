@@ -5,6 +5,13 @@
  */
 package trabalho.telas;
 
+import java.beans.PropertyVetoException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JLabel;
+import javax.swing.JRootPane;
+import trabalho.Conta;
+
 /**
  *
  * @author Informatica
@@ -14,6 +21,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
     /**
      * Creates new form TelaPrincipal
      */
+    public final Conta conta = new Conta();
+
     public TelaPrincipal() {
         initComponents();
     }
@@ -28,99 +37,35 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jCheckBox1 = new javax.swing.JCheckBox();
-        jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        jLTitulo = new javax.swing.JLabel();
+        jLSubTitulo = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
+        jDesktopPane = new javax.swing.JDesktopPane();
 
         jCheckBox1.setText("jCheckBox1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jPanel1.setBackground(new java.awt.Color(255, 153, 102));
-
-        jButton1.setBackground(new java.awt.Color(255, 102, 51));
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton1.setText(" -                   Saldo");
-        jButton1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
             }
         });
-
-        jButton2.setBackground(new java.awt.Color(255, 102, 51));
-        jButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton2.setText("-                   Extrato ");
-        jButton2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-
-        jButton3.setBackground(new java.awt.Color(255, 102, 51));
-        jButton3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton3.setText("-                 Depósitos");
-        jButton3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-
-        jButton4.setBackground(new java.awt.Color(255, 102, 51));
-        jButton4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton4.setText("-               Pagamentos");
-        jButton4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-
-        jButton5.setBackground(new java.awt.Color(255, 102, 51));
-        jButton5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton5.setText("Saque                    -");
-        jButton5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-
-        jButton6.setBackground(new java.awt.Color(255, 102, 51));
-        jButton6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton6.setText(" Transferências              -");
-        jButton6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jButton6.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-
-        jButton7.setBackground(new java.awt.Color(255, 102, 51));
-        jButton7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton7.setText("Investimentos              -");
-        jButton7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-
-        jButton8.setBackground(new java.awt.Color(255, 102, 51));
-        jButton8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton8.setText("Outros                    -");
-        jButton8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setForeground(new java.awt.Color(255, 153, 51));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Logo.png"))); // NOI18N
 
-        jLabel1.setBackground(new java.awt.Color(255, 153, 102));
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 102, 0));
-        jLabel1.setText("AUTO-ATENDIMENTO");
+        jLTitulo.setBackground(new java.awt.Color(255, 153, 102));
+        jLTitulo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLTitulo.setForeground(new java.awt.Color(255, 102, 0));
+        jLTitulo.setText("AUTO-ATENDIMENTO");
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 153, 102));
-        jLabel3.setText("POR FAVOR , PRESSIONE O BOTÃO COM A OPÇÂO DESEJADA");
+        jLSubTitulo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLSubTitulo.setForeground(new java.awt.Color(255, 153, 102));
+        jLSubTitulo.setText("POR FAVOR , PRESSIONE O BOTÃO COM A OPÇÂO DESEJADA");
 
         jSeparator1.setForeground(new java.awt.Color(255, 153, 51));
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
@@ -136,17 +81,17 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(77, 77, 77)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel3))
+                    .addComponent(jLTitulo)
+                    .addComponent(jLSubTitulo))
                 .addContainerGap(140, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addComponent(jLabel1)
+                .addComponent(jLTitulo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3)
+                .addComponent(jLSubTitulo)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(jLabel2)
@@ -157,74 +102,50 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
-                    .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(20, 20, 20))
-            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        jDesktopPane.setBackground(new java.awt.Color(255, 153, 102));
+        jDesktopPane.setForeground(new java.awt.Color(255, 153, 102));
+
+        javax.swing.GroupLayout jDesktopPaneLayout = new javax.swing.GroupLayout(jDesktopPane);
+        jDesktopPane.setLayout(jDesktopPaneLayout);
+        jDesktopPaneLayout.setHorizontalGroup(
+            jDesktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(51, 51, 51)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
-                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(26, 26, 26)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE))
-                .addGap(26, 26, 26)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
-                    .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(28, Short.MAX_VALUE))
+        jDesktopPaneLayout.setVerticalGroup(
+            jDesktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 409, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jDesktopPane)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jDesktopPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        Inicial inicial = new Inicial();
+        jDesktopPane.add(inicial);
+        try {
+            inicial.setMaximum(true);
+        } catch (PropertyVetoException ex) {
+            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        inicial.setUndecorated(true);
+        inicial.setBorder(null);
+        inicial.setVisible(true);
+    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments
@@ -262,20 +183,21 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
     private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JLabel jLabel1;
+    public static javax.swing.JDesktopPane jDesktopPane;
+    public static javax.swing.JLabel jLSubTitulo;
+    public static javax.swing.JLabel jLTitulo;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
+
+    public static void setjLSubTitulo(String text) {
+        TelaPrincipal.jLSubTitulo.setText(text);
+    }
+
+    public static void setjLTitulo(String text) {
+        TelaPrincipal.jLTitulo.setText(text);
+    }
+
 }
