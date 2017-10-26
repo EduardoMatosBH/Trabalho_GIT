@@ -5,6 +5,7 @@
  */
 package trabalho;
 
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
@@ -16,6 +17,8 @@ public class Conta {
     private int ag;
     private int conta;
     private double saldo;
+    private ArrayList<String> extrato;
+    
 
     public String getTitular() {
         return titular;
@@ -53,15 +56,25 @@ public class Conta {
     public void saque(double valor){
         if(valor <= saldo){
         setSaldo(saldo-valor);
+        this.setExtrato("Saque - " + "\n" + "Data " + System.currentTimeMillis() + " Valor :R$" + valor);
+        
         }else{
             JOptionPane.showMessageDialog(null, "Saldo insuficiente");
         }
     }
     public void saldo(){
     }
-    public void extrato(){
-    }
+   
     public void deposito(){
     }
+
+    public ArrayList<String> getExtrato() {
+        return extrato;
+    }
+
+    public void setExtrato(String movimentacao) {
+        this.extrato.add(movimentacao);
+    }
+    
     
 }
