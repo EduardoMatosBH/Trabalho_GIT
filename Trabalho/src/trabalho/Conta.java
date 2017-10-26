@@ -12,6 +12,7 @@ import javax.swing.JOptionPane;
  * @author 71501118
  */
 public class Conta {
+
     private String titular;
     private int ag;
     private int conta;
@@ -48,24 +49,36 @@ public class Conta {
     public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
-    
-    
-    public void saque(double valor){
-        if(valor <= saldo){
-        setSaldo(saldo-valor);
-        }else{
+
+    public void saque(double valor) {
+        if (valor <= saldo) {
+            setSaldo(saldo - valor);
+        } else {
             JOptionPane.showMessageDialog(null, "Saldo insuficiente");
         }
     }
+<<<<<<< HEAD
     public double saldo(){
         
         System.out.println("Saldo: " +saldo);
         
         return saldo;
+=======
+
+    public void saldo() {
+>>>>>>> f0adb76d313d37b1de6d823844bdcc1c2a41ff12
     }
-    public void extrato(){
+
+    public void extrato() {
     }
-    public void deposito(){
+
+    public void deposito(double valor) {
+        if (valor <= 0) {
+            JOptionPane.showMessageDialog(null, "Valor deve ser maior que zero! Deposito não efetuado!");
+        } else {
+            setSaldo(saldo + valor);
+        }
+        JOptionPane.showMessageDialog(null, "Deposito realizado com sucesso!");
+
     }
-    
 }
