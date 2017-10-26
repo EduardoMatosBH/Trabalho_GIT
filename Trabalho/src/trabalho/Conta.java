@@ -19,7 +19,6 @@ public class Conta {
     private int conta;
     private double saldo;
     private ArrayList<String> extrato;
-    
 
     public String getTitular() {
         return titular;
@@ -52,34 +51,29 @@ public class Conta {
     public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
-    
-    
-    public void saque(double valor){
-        if(valor <= saldo){
-        setSaldo(saldo-valor);
-        this.setExtrato("Saque - " + "\n" + "Data " + System.currentTimeMillis() + " Valor :R$" + valor);
-        
-        }else{
+
+    public void saque(double valor) {
+        if (valor <= saldo) {
+            setSaldo(saldo - valor);
+            this.setExtrato("Saque - " + "\n" + "Data " + System.currentTimeMillis() + " Valor :R$" + valor);
+        } else {
             JOptionPane.showMessageDialog(null, "Saldo insuficiente");
         }
     }
-    public double saldo(){
-        
-        System.out.println("Saldo: " +saldo);
-        
+
+    public double saldo() {
+        System.out.println("Saldo: " + saldo);
         return saldo;
- 
     }
-   
 
     public void deposito(double valor) {
         if (valor <= 0) {
             JOptionPane.showMessageDialog(null, "Valor deve ser maior que zero! Deposito não efetuado!");
         } else {
             setSaldo(saldo + valor);
+            JOptionPane.showMessageDialog(null, "Deposito realizado com sucesso!");
+            this.setExtrato("Depósito - " + "\n" + "Data " + System.currentTimeMillis() + " Valor :R$" + valor);
         }
-        JOptionPane.showMessageDialog(null, "Deposito realizado com sucesso!");
-
     }
 
     public ArrayList<String> getExtrato() {
@@ -89,6 +83,5 @@ public class Conta {
     public void setExtrato(String movimentacao) {
         this.extrato.add(movimentacao);
     }
-    
-    
+
 }
