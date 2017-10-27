@@ -8,8 +8,7 @@ package trabalho.telas;
 import java.beans.PropertyVetoException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JLabel;
-import javax.swing.JRootPane;
+import javax.swing.JInternalFrame;
 import trabalho.Conta;
 
 /**
@@ -21,7 +20,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     /**
      * Creates new form TelaPrincipal
      */
-    public final Conta conta = new Conta();
+    public static Conta conta = new Conta();
 
     public TelaPrincipal() {
         initComponents();
@@ -43,10 +42,20 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLSubTitulo = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jDesktopPane = new javax.swing.JDesktopPane();
+        jPanel1 = new javax.swing.JPanel();
+        jBSaldo = new javax.swing.JButton();
+        jBExtrato = new javax.swing.JButton();
+        jBDeposito = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jBSaque = new javax.swing.JButton();
+        jBPagamento = new javax.swing.JButton();
+        jBInvestimento = new javax.swing.JButton();
+        jBOutros = new javax.swing.JButton();
 
         jCheckBox1.setText("jCheckBox1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -105,15 +114,116 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jDesktopPane.setBackground(new java.awt.Color(255, 153, 102));
         jDesktopPane.setForeground(new java.awt.Color(255, 153, 102));
 
+        jPanel1.setBackground(new java.awt.Color(255, 153, 102));
+
+        jBSaldo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jBSaldo.setText(" -                   Saldo");
+        jBSaldo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jBSaldo.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        jBSaldo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBSaldoActionPerformed(evt);
+            }
+        });
+
+        jBExtrato.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jBExtrato.setText("-                   Extrato ");
+        jBExtrato.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jBExtrato.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        jBExtrato.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBExtratoActionPerformed(evt);
+            }
+        });
+
+        jBDeposito.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jBDeposito.setText("-                 Depósitos");
+        jBDeposito.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+
+        jButton4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButton4.setText("-               Pagamentos");
+        jButton4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
+        jBSaque.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jBSaque.setText("Saque                    -");
+        jBSaque.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jBSaque.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBSaqueActionPerformed(evt);
+            }
+        });
+
+        jBPagamento.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jBPagamento.setText(" Transferências              -");
+        jBPagamento.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jBPagamento.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+
+        jBInvestimento.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jBInvestimento.setText("Investimentos              -");
+        jBInvestimento.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+
+        jBOutros.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jBOutros.setText("Outros                    -");
+        jBOutros.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jBSaldo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jBExtrato, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jBDeposito, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 259, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jBSaque, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jBPagamento, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
+                    .addComponent(jBInvestimento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jBOutros, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(20, 20, 20))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jBSaldo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jBSaque, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jBExtrato, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jBPagamento, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jBInvestimento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jBDeposito, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jBOutros, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(52, Short.MAX_VALUE))
+        );
+
+        jDesktopPane.setLayer(jPanel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
         javax.swing.GroupLayout jDesktopPaneLayout = new javax.swing.GroupLayout(jDesktopPane);
         jDesktopPane.setLayout(jDesktopPaneLayout);
         jDesktopPaneLayout.setHorizontalGroup(
             jDesktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jDesktopPaneLayout.setVerticalGroup(
             jDesktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 409, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -132,10 +242,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        Inicial inicial = new Inicial();
+        /* FrameInicial inicial = new FrameInicial();
         jDesktopPane.add(inicial);
         try {
             inicial.setMaximum(true);
@@ -144,8 +255,44 @@ public class TelaPrincipal extends javax.swing.JFrame {
         }
         inicial.setUndecorated(true);
         inicial.setBorder(null);
-        inicial.setVisible(true);
+        inicial.setVisible(true);*/
     }//GEN-LAST:event_formWindowOpened
+
+    private void jBSaldoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSaldoActionPerformed
+
+        FrameSaldo saldo = new FrameSaldo();
+        saldo.setjTSaldo("" + conta.getSaldo());
+        jDesktopPane.add(saldo);
+        try {
+            saldo.setMaximum(true);
+        } catch (PropertyVetoException ex) {
+            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        saldo.setUndecorated(true);
+        saldo.setBorder(null);
+        saldo.setVisible(true);
+    }//GEN-LAST:event_jBSaldoActionPerformed
+
+    private void jBExtratoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBExtratoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jBExtratoActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jBSaqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSaqueActionPerformed
+        FrameSaque saque = new FrameSaque();
+        jDesktopPane.add(saque);
+        try {
+            saque.setMaximum(true);
+        } catch (PropertyVetoException ex) {
+            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        saque.setUndecorated(true);
+        saque.setBorder(null);
+        saque.setVisible(true);
+    }//GEN-LAST:event_jBSaqueActionPerformed
 
     /**
      * @param args the command line arguments
@@ -183,11 +330,20 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jBDeposito;
+    private javax.swing.JButton jBExtrato;
+    private javax.swing.JButton jBInvestimento;
+    private javax.swing.JButton jBOutros;
+    private javax.swing.JButton jBPagamento;
+    private javax.swing.JButton jBSaldo;
+    private javax.swing.JButton jBSaque;
+    private javax.swing.JButton jButton4;
     private javax.swing.JCheckBox jCheckBox1;
     public static javax.swing.JDesktopPane jDesktopPane;
     public static javax.swing.JLabel jLSubTitulo;
     public static javax.swing.JLabel jLTitulo;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
@@ -200,4 +356,24 @@ public class TelaPrincipal extends javax.swing.JFrame {
         TelaPrincipal.jLTitulo.setText(text);
     }
 
+    public void setTela(JInternalFrame frame) {
+        JInternalFrame j = new JInternalFrame();
+        j = frame;
+
+        jDesktopPane.add(j);
+        try {
+            j.setMaximum(true);
+        } catch (PropertyVetoException ex) {
+            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        //j.setUndecorated(true);
+        j.setBorder(null);
+        j.setVisible(true);
+        jDesktopPane.repaint();
+    }
+
+    public static Conta getConta() {
+        return TelaPrincipal.conta;
+    }
+    
 }

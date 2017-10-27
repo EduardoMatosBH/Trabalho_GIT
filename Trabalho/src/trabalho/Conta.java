@@ -13,12 +13,21 @@ import javax.swing.JOptionPane;
  * @author 71501118
  */
 public class Conta {
-
+    private String senha = "123456";
     private String titular;
     private int ag;
     private int conta;
-    private double saldo;
-    private ArrayList<String> extrato;
+    private double saldo = 1000.00;
+    private ArrayList<String> extrato = new ArrayList<>();
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+    
 
     public String getTitular() {
         return titular;
