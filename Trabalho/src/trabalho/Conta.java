@@ -91,6 +91,11 @@ public class Conta {
 
     public void setExtrato(String movimentacao) {
         this.extrato.add(movimentacao);
+	System.out.println("\tEXTRATO");
+        System.out.println("Nome: " + this.nome);
+        System.out.println("Número da conta: " + this.conta);
+        System.out.printf("Saldo atual: %.2f\n",this.saldo);
+        System.out.println("Saques realizados hoje: " + this.saques + "\n");
     }
 
 }
