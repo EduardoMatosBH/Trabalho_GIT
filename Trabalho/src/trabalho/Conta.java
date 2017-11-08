@@ -94,3 +94,14 @@ public class Conta {
     }
 
 }
+
+public boolean transferir(Conta contaDestino, Conta contaOrigem, String pessoaDestino double valor){
+		if (sacar(valor contaOrigem)) { 
+		if (contaDestino.getNome().equals(pessoaDestino));
+			return contaDestino.depositar(valor);
+		}
+		else{
+			System.out.println("Não há conta aberta para" + " " + pessoaDestino);
+			return false;
+		}
+	}
